@@ -3,10 +3,8 @@ services:
     image: nginx:alpine
     container_name: map-gateway
     ports:
-      - "80:80"
-      - "443:443"
+      - "80:8080"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./nginx/conf.d:/etc/nginx/conf.d:ro
-      - ../MapServer/tiles:/var/www/tiles:ro
+      - ../MapServer/MapServer/tiles:/var/www/tiles:ro
     restart: unless-stopped
